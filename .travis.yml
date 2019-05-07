@@ -1,2 +1,5 @@
 sudo: false
 language: cpp
+before_install:
+  - echo "start to install dependency"
+
