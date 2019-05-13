@@ -1,5 +1,8 @@
 sudo: false
 language: cpp
+env:
+  - ENV1=true
+  - ENV2=true
 before_install:
   - echo "start to install dependency"
 script:
