@@ -10,7 +10,9 @@ script:
 jobs:
   include:
     - stage: build
+      name: build_stage
       script: g++ main.cpp
-    - stage: test
+    - stage: deploy 
+      name: deploy_stage
       script: g++ main.cpp
 
