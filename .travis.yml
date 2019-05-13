@@ -7,4 +7,10 @@ before_install:
   - echo "start to install dependency"
 script:
   - g++ main.cpp
+jobs:
+  include:
+    - stage: build
+      script: g++ main.cpp
+    - stage: test
+      script: g++ main.cpp
 
