@@ -11,7 +11,12 @@ jobs:
   include:
     - stage: build
       name: build_stage
-      script: g++ main.cpp
+      - before_install: 
+        - echo "start to job1 in build stage"
+        script: g++ main.cpp
+      - before_install:
+        - echo "start to job2 in build stage"
+        script: g++ main.cpp
     - stage: deploy 
       name: deploy_stage
       script: g++ main.cpp
