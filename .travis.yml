@@ -1,23 +1,5 @@
-sudo: false
-language: cpp
-env:
-  - ENV1=true
-  - ENV2=true
-before_install:
-  - echo "start to install dependency"
-script:
-  - g++ main.cpp
-jobs:
-  include:
-    - stage: build
-      before_install: 
-        - echo "start to job1 in build stage"
-      script: g++ main.cpp
-    - stage: build
-      before_install:
-        - echo "start to job2 in build stage"
-      script: g++ main.cpp
-    - stage: deploy 
-      name: deploy_stage
-      script: g++ main.cpp
-
+language: python 
+python:
+        - "3.6"
+install:
+        - pip install mkdocs
