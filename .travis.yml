@@ -3,11 +3,18 @@ python:
 - '3.6'
 git:
   depth: 3
+before_install:
+- openssl aes-256-cbc -K $encrypted_5a7cb78de077_key -iv $encrypted_5a7cb78de077_iv
+  -in deploy-key.enc -out deploy-key -d
+- chmode 600 deploy-key
+- eval 'ssh-agent -s'
+- ssh-add deploy-key
+- git config --global user.name "Kai.Zhou"
+- git config --global user.email "zhoukaisspu@163.com"
 install:
 - pip install mkdocs
 - mkdocs --version
 - pip install mkdocs-material
-script: skip
-before_install:
-- openssl aes-256-cbc -K $encrypted_5a7cb78de077_key -iv $encrypted_5a7cb78de077_iv
-  -in deploy-key.enc -out deploy-key -d
+script: 
+- git remote add githubio git@github.com:openzedian/openzedian.github.io
+- git push githubio master
