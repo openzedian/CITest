@@ -16,5 +16,5 @@ install:
 - mkdocs --version
 - pip install mkdocs-material
 script: 
-- git remote add githubio git@github.com:openzedian/openzedian.github.io
+- git remote add githubio git@github.com:openzedian/openzedian.github.io.git
 - git push githubio master
