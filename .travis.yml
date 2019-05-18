@@ -1,8 +1,13 @@
-language: python 
+language: python
 python:
-        - "3.6"
+- '3.6'
+git:
+  depth: 3
 install:
-        - pip install mkdocs
-        - mkdocs --version
-        - pip install mkdocs-material
+- pip install mkdocs
+- mkdocs --version
+- pip install mkdocs-material
 script: skip
+before_install:
+- openssl aes-256-cbc -K $encrypted_5a7cb78de077_key -iv $encrypted_5a7cb78de077_iv
+  -in deploy-key.enc -out deploy-key -d
