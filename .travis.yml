@@ -4,3 +4,5 @@ python:
 install:
         - pip install mkdocs
         - mkdocs --version
+        - pip install mkdocs-material
+script:
